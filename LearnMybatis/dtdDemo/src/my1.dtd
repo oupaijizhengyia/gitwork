@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+    以jsp举例
+    最外层是html
+    head, body 是必须有的
+    而在head中 title ,script,meta 这些都是可以有的 但是title最多出现1次
+-->
+<!ELEMENT html (head,div*,script*,body)>
+
+<!ELEMENT script (#PCDATA)>
+
+
+<!ELEMENT head (title?,meta*)>
+
+<!ELEMENT meta EMPTY>
+
+<!ELEMENT title (#PCDATA)>
+
+<!ELEMENT body ANY>
+
+<!ELEMENT div ANY>
+<!ATTLIST div
+        id CDATA #REQUIRED
+        function CDATA #IMPLIED
+        >
+<!ELEMENT proporties (proporty)>
+
+<!ELEMENT proporty EMPTY>
+<!ATTLIST proporty
+name CDATA #REQUIRED
+value CDATA #REQUIRED
+>

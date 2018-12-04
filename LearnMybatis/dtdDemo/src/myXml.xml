@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html SYSTEM "my.dtd">
+<html>
+    <title>fist demo</title>
+    <metadata></metadata>
+    <script></script>
+    <head>i am head</head>
+    <body>this is body</body>
+    <foot>i have two foot</foot>
+</html>

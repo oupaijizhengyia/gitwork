@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!ELEMENT html (title,metadata,script,head,body,foot)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT metadata (#PCDATA)>
+<!ELEMENT script (#PCDATA)>
+<!ELEMENT head (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+<!ELEMENT foot (#PCDATA)>
