@@ -1,0 +1,6 @@
+1.使用此依赖包必须实现TanguUserService
+2.修改完此内部配置时 maven打包需要跳过test
+3.此核心包为tcmts2版本 为多数据源 数据源为uat 3412 如果需要重新制定数据源
+  请在使用此包的resources下创建一个config
+4.配置文件中的配置默认使用tcmts2配置
+5.默认使用mybatis

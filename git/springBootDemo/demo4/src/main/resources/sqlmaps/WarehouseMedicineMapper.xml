@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tangu.tcmts.dao.WarehouseMedicineMapper" >
+  <resultMap id="BaseResultMap" type="com.tangu.tcmts.po.WarehouseMedicine" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="warehouse_id" property="warehouseId" jdbcType="INTEGER" />
+    <result column="medicine_id" property="medicineId" jdbcType="INTEGER" />
+    <result column="standard_id" property="standardId" jdbcType="INTEGER" />
+    <result column="storage_location" property="storageLocation" jdbcType="VARCHAR" />
+    <result column="up_limit" property="upLimit" jdbcType="DECIMAL" />
+    <result column="lower_limit" property="lowerLimit" jdbcType="DECIMAL" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, warehouse_id, medicine_id, standard_id, storage_location, up_limit, lower_limit, 
+    create_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from warehouse_medicine
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from warehouse_medicine
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.tangu.tcmts.po.WarehouseMedicine" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into warehouse_medicine (warehouse_id, medicine_id, standard_id, 
+      storage_location, up_limit, lower_limit, 
+      create_time)
+    values (#{warehouseId,jdbcType=INTEGER}, #{medicineId,jdbcType=INTEGER}, #{standardId,jdbcType=INTEGER}, 
+      #{storageLocation,jdbcType=VARCHAR}, #{upLimit,jdbcType=DECIMAL}, #{lowerLimit,jdbcType=DECIMAL}, 
+      #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tangu.tcmts.po.WarehouseMedicine" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into warehouse_medicine
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="warehouseId != null" >
+        warehouse_id,
+      </if>
+      <if test="medicineId != null" >
+        medicine_id,
+      </if>
+      <if test="standardId != null" >
+        standard_id,
+      </if>
+      <if test="storageLocation != null" >
+        storage_location,
+      </if>
+      <if test="upLimit != null" >
+        up_limit,
+      </if>
+      <if test="lowerLimit != null" >
+        lower_limit,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="warehouseId != null" >
+        #{warehouseId,jdbcType=INTEGER},
+      </if>
+      <if test="medicineId != null" >
+        #{medicineId,jdbcType=INTEGER},
+      </if>
+      <if test="standardId != null" >
+        #{standardId,jdbcType=INTEGER},
+      </if>
+      <if test="storageLocation != null" >
+        #{storageLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="upLimit != null" >
+        #{upLimit,jdbcType=DECIMAL},
+      </if>
+      <if test="lowerLimit != null" >
+        #{lowerLimit,jdbcType=DECIMAL},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tangu.tcmts.po.WarehouseMedicine" >
+    update warehouse_medicine
+    <set >
+      <if test="warehouseId != null" >
+        warehouse_id = #{warehouseId,jdbcType=INTEGER},
+      </if>
+      <if test="medicineId != null" >
+        medicine_id = #{medicineId,jdbcType=INTEGER},
+      </if>
+      <if test="standardId != null" >
+        standard_id = #{standardId,jdbcType=INTEGER},
+      </if>
+      <if test="storageLocation != null" >
+        storage_location = #{storageLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="upLimit != null" >
+        up_limit = #{upLimit,jdbcType=DECIMAL},
+      </if>
+      <if test="lowerLimit != null" >
+        lower_limit = #{lowerLimit,jdbcType=DECIMAL},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tangu.tcmts.po.WarehouseMedicine" >
+    update warehouse_medicine
+    set warehouse_id = #{warehouseId,jdbcType=INTEGER},
+      medicine_id = #{medicineId,jdbcType=INTEGER},
+      standard_id = #{standardId,jdbcType=INTEGER},
+      storage_location = #{storageLocation,jdbcType=VARCHAR},
+      up_limit = #{upLimit,jdbcType=DECIMAL},
+      lower_limit = #{lowerLimit,jdbcType=DECIMAL},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

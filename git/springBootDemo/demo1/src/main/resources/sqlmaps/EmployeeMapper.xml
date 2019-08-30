@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo1.dao.EmployeeMapper" >
+  <resultMap id="BaseResultMap" type="com.example.demo1.po.Employee" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="employee_name" property="employeeName" jdbcType="VARCHAR" />
+    <result column="initial_code" property="initialCode" jdbcType="VARCHAR" />
+    <result column="use_state" property="useState" jdbcType="BIT" />
+    <result column="employee_code" property="employeeCode" jdbcType="VARCHAR" />
+    <result column="employee_tel" property="employeeTel" jdbcType="VARCHAR" />
+    <result column="role_id" property="roleId" jdbcType="INTEGER" />
+    <result column="employee_password" property="employeePassword" jdbcType="VARCHAR" />
+    <result column="is_operator" property="isOperator" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="mod_time" property="modTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, employee_name, initial_code, use_state, employee_code, employee_tel, role_id, 
+    employee_password, is_operator, create_time, mod_time
+  </sql>
+  <select id="getAllByCondition" parameterType="com.example.demo1.po.Employee" resultType="com.example.demo1.po.Employee">
+    SELECT
+    <include refid="Base_Column_List" />
+    FROM employee
+    WHERE
+        1 = 1
+        <if test="employeeName != null" >
+            and employee_name = #{employeeName},
+        </if>
+        <if test="initialCode != null" >
+            and initial_code = #{initialCode},
+        </if>
+        <if test="useState != null" >
+            and use_state = #{useState},
+        </if>
+        <if test="employeeCode != null" >
+            and employee_code = #{employeeCode},
+        </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from employee
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from employee
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.example.demo1.po.Employee" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into employee (employee_name, initial_code, use_state, 
+      employee_code, employee_tel, role_id, 
+      employee_password, is_operator, create_time, 
+      mod_time)
+    values (#{employeeName,jdbcType=VARCHAR}, #{initialCode,jdbcType=VARCHAR}, #{useState,jdbcType=BIT}, 
+      #{employeeCode,jdbcType=VARCHAR}, #{employeeTel,jdbcType=VARCHAR}, #{roleId,jdbcType=INTEGER}, 
+      #{employeePassword,jdbcType=VARCHAR}, #{isOperator,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{modTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.demo1.po.Employee" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into employee
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="employeeName != null" >
+        employee_name,
+      </if>
+      <if test="initialCode != null" >
+        initial_code,
+      </if>
+      <if test="useState != null" >
+        use_state,
+      </if>
+      <if test="employeeCode != null" >
+        employee_code,
+      </if>
+      <if test="employeeTel != null" >
+        employee_tel,
+      </if>
+      <if test="roleId != null" >
+        role_id,
+      </if>
+      <if test="employeePassword != null" >
+        employee_password,
+      </if>
+      <if test="isOperator != null" >
+        is_operator,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="modTime != null" >
+        mod_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="employeeName != null" >
+        #{employeeName,jdbcType=VARCHAR},
+      </if>
+      <if test="initialCode != null" >
+        #{initialCode,jdbcType=VARCHAR},
+      </if>
+      <if test="useState != null" >
+        #{useState,jdbcType=BIT},
+      </if>
+      <if test="employeeCode != null" >
+        #{employeeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeTel != null" >
+        #{employeeTel,jdbcType=VARCHAR},
+      </if>
+      <if test="roleId != null" >
+        #{roleId,jdbcType=INTEGER},
+      </if>
+      <if test="employeePassword != null" >
+        #{employeePassword,jdbcType=VARCHAR},
+      </if>
+      <if test="isOperator != null" >
+        #{isOperator,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modTime != null" >
+        #{modTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.demo1.po.Employee" >
+    update employee
+    <set >
+      <if test="employeeName != null" >
+        employee_name = #{employeeName,jdbcType=VARCHAR},
+      </if>
+      <if test="initialCode != null" >
+        initial_code = #{initialCode,jdbcType=VARCHAR},
+      </if>
+      <if test="useState != null" >
+        use_state = #{useState,jdbcType=BIT},
+      </if>
+      <if test="employeeCode != null" >
+        employee_code = #{employeeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeTel != null" >
+        employee_tel = #{employeeTel,jdbcType=VARCHAR},
+      </if>
+      <if test="roleId != null" >
+        role_id = #{roleId,jdbcType=INTEGER},
+      </if>
+      <if test="employeePassword != null" >
+        employee_password = #{employeePassword,jdbcType=VARCHAR},
+      </if>
+      <if test="isOperator != null" >
+        is_operator = #{isOperator,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modTime != null" >
+        mod_time = #{modTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.demo1.po.Employee" >
+    update employee
+    set employee_name = #{employeeName,jdbcType=VARCHAR},
+      initial_code = #{initialCode,jdbcType=VARCHAR},
+      use_state = #{useState,jdbcType=BIT},
+      employee_code = #{employeeCode,jdbcType=VARCHAR},
+      employee_tel = #{employeeTel,jdbcType=VARCHAR},
+      role_id = #{roleId,jdbcType=INTEGER},
+      employee_password = #{employeePassword,jdbcType=VARCHAR},
+      is_operator = #{isOperator,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      mod_time = #{modTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

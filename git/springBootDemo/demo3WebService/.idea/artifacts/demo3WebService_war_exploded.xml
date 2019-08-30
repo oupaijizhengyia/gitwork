@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="demo3WebService:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/demo3WebService_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="demo3WebService/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="demo3WebService" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

@@ -1,4 +1,4 @@
-package Hungury;
+package Lazy;
 
 /**
  * FileName: Singleton
@@ -6,15 +6,14 @@ package Hungury;
  * Date: 2018/6/4 13:54
  */
 public class Singleton {
-    private Singleton singleton;
+    private static Singleton singleton;
     private Singleton(){}
 
-    public Singleton getBean(){
+    public static Singleton getBean(){
         if(singleton == null){
-            return new Singleton();
-        }else {
-            return singleton;
+            singleton = new Singleton();
         }
+        return singleton;
     }
 
 }

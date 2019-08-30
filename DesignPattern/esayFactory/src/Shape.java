@@ -1,4 +1,4 @@
-package PACKAGE_NAME;
-
 public interface Shape {
+    void draw();
+    void erase();
 }

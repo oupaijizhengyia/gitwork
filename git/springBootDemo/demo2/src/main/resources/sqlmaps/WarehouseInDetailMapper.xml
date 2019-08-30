@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.java.demo2.dao.WarehouseInDetailMapper" >
+  <resultMap id="BaseResultMap" type="com.java.demo2.po.WarehouseInDetail" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="warehouse_in_id" property="warehouseInId" jdbcType="INTEGER" />
+    <result column="medicine_id" property="medicineId" jdbcType="INTEGER" />
+    <result column="standard_id" property="standardId" jdbcType="INTEGER" />
+    <result column="quantity" property="quantity" jdbcType="DECIMAL" />
+    <result column="price" property="price" jdbcType="DECIMAL" />
+    <result column="money" property="money" jdbcType="DECIMAL" />
+    <result column="batch_number" property="batchNumber" jdbcType="VARCHAR" />
+    <result column="make_date" property="makeDate" jdbcType="VARCHAR" />
+    <result column="valid_date" property="validDate" jdbcType="VARCHAR" />
+    <result column="quality" property="quality" jdbcType="VARCHAR" />
+    <result column="producer_id" property="producerId" jdbcType="INTEGER" />
+    <result column="approval_number" property="approvalNumber" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, warehouse_in_id, medicine_id, standard_id, quantity, price, money, batch_number, 
+    make_date, valid_date, quality, producer_id, approval_number, remark
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from warehouse_in_detail
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from warehouse_in_detail
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.java.demo2.po.WarehouseInDetail" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into warehouse_in_detail (warehouse_in_id, medicine_id, standard_id, 
+      quantity, price, money, 
+      batch_number, make_date, valid_date, 
+      quality, producer_id, approval_number, 
+      remark)
+    values (#{warehouseInId,jdbcType=INTEGER}, #{medicineId,jdbcType=INTEGER}, #{standardId,jdbcType=INTEGER}, 
+      #{quantity,jdbcType=DECIMAL}, #{price,jdbcType=DECIMAL}, #{money,jdbcType=DECIMAL}, 
+      #{batchNumber,jdbcType=VARCHAR}, #{makeDate,jdbcType=VARCHAR}, #{validDate,jdbcType=VARCHAR}, 
+      #{quality,jdbcType=VARCHAR}, #{producerId,jdbcType=INTEGER}, #{approvalNumber,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.java.demo2.po.WarehouseInDetail" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into warehouse_in_detail
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="warehouseInId != null" >
+        warehouse_in_id,
+      </if>
+      <if test="medicineId != null" >
+        medicine_id,
+      </if>
+      <if test="standardId != null" >
+        standard_id,
+      </if>
+      <if test="quantity != null" >
+        quantity,
+      </if>
+      <if test="price != null" >
+        price,
+      </if>
+      <if test="money != null" >
+        money,
+      </if>
+      <if test="batchNumber != null" >
+        batch_number,
+      </if>
+      <if test="makeDate != null" >
+        make_date,
+      </if>
+      <if test="validDate != null" >
+        valid_date,
+      </if>
+      <if test="quality != null" >
+        quality,
+      </if>
+      <if test="producerId != null" >
+        producer_id,
+      </if>
+      <if test="approvalNumber != null" >
+        approval_number,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="warehouseInId != null" >
+        #{warehouseInId,jdbcType=INTEGER},
+      </if>
+      <if test="medicineId != null" >
+        #{medicineId,jdbcType=INTEGER},
+      </if>
+      <if test="standardId != null" >
+        #{standardId,jdbcType=INTEGER},
+      </if>
+      <if test="quantity != null" >
+        #{quantity,jdbcType=DECIMAL},
+      </if>
+      <if test="price != null" >
+        #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="money != null" >
+        #{money,jdbcType=DECIMAL},
+      </if>
+      <if test="batchNumber != null" >
+        #{batchNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="makeDate != null" >
+        #{makeDate,jdbcType=VARCHAR},
+      </if>
+      <if test="validDate != null" >
+        #{validDate,jdbcType=VARCHAR},
+      </if>
+      <if test="quality != null" >
+        #{quality,jdbcType=VARCHAR},
+      </if>
+      <if test="producerId != null" >
+        #{producerId,jdbcType=INTEGER},
+      </if>
+      <if test="approvalNumber != null" >
+        #{approvalNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.java.demo2.po.WarehouseInDetail" >
+    update warehouse_in_detail
+    <set >
+      <if test="warehouseInId != null" >
+        warehouse_in_id = #{warehouseInId,jdbcType=INTEGER},
+      </if>
+      <if test="medicineId != null" >
+        medicine_id = #{medicineId,jdbcType=INTEGER},
+      </if>
+      <if test="standardId != null" >
+        standard_id = #{standardId,jdbcType=INTEGER},
+      </if>
+      <if test="quantity != null" >
+        quantity = #{quantity,jdbcType=DECIMAL},
+      </if>
+      <if test="price != null" >
+        price = #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="money != null" >
+        money = #{money,jdbcType=DECIMAL},
+      </if>
+      <if test="batchNumber != null" >
+        batch_number = #{batchNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="makeDate != null" >
+        make_date = #{makeDate,jdbcType=VARCHAR},
+      </if>
+      <if test="validDate != null" >
+        valid_date = #{validDate,jdbcType=VARCHAR},
+      </if>
+      <if test="quality != null" >
+        quality = #{quality,jdbcType=VARCHAR},
+      </if>
+      <if test="producerId != null" >
+        producer_id = #{producerId,jdbcType=INTEGER},
+      </if>
+      <if test="approvalNumber != null" >
+        approval_number = #{approvalNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.java.demo2.po.WarehouseInDetail" >
+    update warehouse_in_detail
+    set warehouse_in_id = #{warehouseInId,jdbcType=INTEGER},
+      medicine_id = #{medicineId,jdbcType=INTEGER},
+      standard_id = #{standardId,jdbcType=INTEGER},
+      quantity = #{quantity,jdbcType=DECIMAL},
+      price = #{price,jdbcType=DECIMAL},
+      money = #{money,jdbcType=DECIMAL},
+      batch_number = #{batchNumber,jdbcType=VARCHAR},
+      make_date = #{makeDate,jdbcType=VARCHAR},
+      valid_date = #{validDate,jdbcType=VARCHAR},
+      quality = #{quality,jdbcType=VARCHAR},
+      producer_id = #{producerId,jdbcType=INTEGER},
+      approval_number = #{approvalNumber,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -2,23 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9904e066-057d-4d67-b6b9-6a92480578ed" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/../DesignPattern/Singleton/src/Hungury/Singleton.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../DesignPattern/Singleton/src/IoDH/Singleton.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../DesignPattern/Singleton/src/Lazy/Singleton.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../DesignPattern/abstractFactory/src/config.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../DesignPattern/abstractFactory/src/factory/AndroidFactory.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../DesignPattern/abstractFactory/src/factory/IOSFactroy.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../DesignPattern/abstractFactory/src/factory/SymbainFactory.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../DesignPattern/abstractFactory/src/factory/SystemFactory.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../DesignPattern/abstractFactory/src/interfaceController/AndroidInterface.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../DesignPattern/abstractFactory/src/interfaceController/IOSInterface.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../DesignPattern/abstractFactory/src/interfaceController/InterFaceController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../DesignPattern/abstractFactory/src/interfaceController/SymbainInterface.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../DesignPattern/abstractFactory/src/operateController/AndroidOperate.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../DesignPattern/abstractFactory/src/operateController/IOSOperate.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../DesignPattern/abstractFactory/src/operateController/OperateController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../DesignPattern/abstractFactory/src/operateController/SymbianOperate.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../DesignPattern/abstractFactory/src/util/DataUtil.java" />
+      <change beforePath="$PROJECT_DIR$/../DesignPattern/Singleton/src/Hungury/Singleton.java" afterPath="$PROJECT_DIR$/../DesignPattern/Singleton/src/Hungury/Singleton.java" />
+      <change beforePath="$PROJECT_DIR$/../DesignPattern/Singleton/src/IoDH/Singleton.java" afterPath="$PROJECT_DIR$/../DesignPattern/Singleton/src/IoDH/Singleton.java" />
+      <change beforePath="$PROJECT_DIR$/../DesignPattern/Singleton/src/Lazy/Singleton.java" afterPath="$PROJECT_DIR$/../DesignPattern/Singleton/src/Lazy/Singleton.java" />
+      <change beforePath="$PROJECT_DIR$/../DesignPattern/abstractFactory/src/config.txt" afterPath="$PROJECT_DIR$/../DesignPattern/abstractFactory/src/config.txt" />
+      <change beforePath="$PROJECT_DIR$/../DesignPattern/abstractFactory/src/factory/AndroidFactory.java" afterPath="$PROJECT_DIR$/../DesignPattern/abstractFactory/src/factory/AndroidFactory.java" />
+      <change beforePath="$PROJECT_DIR$/../DesignPattern/abstractFactory/src/factory/IOSFactroy.java" afterPath="$PROJECT_DIR$/../DesignPattern/abstractFactory/src/factory/IOSFactroy.java" />
+      <change beforePath="$PROJECT_DIR$/../DesignPattern/abstractFactory/src/factory/SymbainFactory.java" afterPath="$PROJECT_DIR$/../DesignPattern/abstractFactory/src/factory/SymbainFactory.java" />
+      <change beforePath="$PROJECT_DIR$/../DesignPattern/abstractFactory/src/factory/SystemFactory.java" afterPath="$PROJECT_DIR$/../DesignPattern/abstractFactory/src/factory/SystemFactory.java" />
+      <change beforePath="$PROJECT_DIR$/../DesignPattern/abstractFactory/src/interfaceController/AndroidInterface.java" afterPath="$PROJECT_DIR$/../DesignPattern/abstractFactory/src/interfaceController/AndroidInterface.java" />
+      <change beforePath="$PROJECT_DIR$/../DesignPattern/abstractFactory/src/interfaceController/IOSInterface.java" afterPath="$PROJECT_DIR$/../DesignPattern/abstractFactory/src/interfaceController/IOSInterface.java" />
+      <change beforePath="$PROJECT_DIR$/../DesignPattern/abstractFactory/src/interfaceController/InterFaceController.java" afterPath="$PROJECT_DIR$/../DesignPattern/abstractFactory/src/interfaceController/InterFaceController.java" />
+      <change beforePath="$PROJECT_DIR$/../DesignPattern/abstractFactory/src/interfaceController/SymbainInterface.java" afterPath="$PROJECT_DIR$/../DesignPattern/abstractFactory/src/interfaceController/SymbainInterface.java" />
+      <change beforePath="$PROJECT_DIR$/../DesignPattern/abstractFactory/src/operateController/AndroidOperate.java" afterPath="$PROJECT_DIR$/../DesignPattern/abstractFactory/src/operateController/AndroidOperate.java" />
+      <change beforePath="$PROJECT_DIR$/../DesignPattern/abstractFactory/src/operateController/IOSOperate.java" afterPath="$PROJECT_DIR$/../DesignPattern/abstractFactory/src/operateController/IOSOperate.java" />
+      <change beforePath="$PROJECT_DIR$/../DesignPattern/abstractFactory/src/operateController/OperateController.java" afterPath="$PROJECT_DIR$/../DesignPattern/abstractFactory/src/operateController/OperateController.java" />
+      <change beforePath="$PROJECT_DIR$/../DesignPattern/abstractFactory/src/operateController/SymbianOperate.java" afterPath="$PROJECT_DIR$/../DesignPattern/abstractFactory/src/operateController/SymbianOperate.java" />
+      <change beforePath="$PROJECT_DIR$/../DesignPattern/abstractFactory/src/util/DataUtil.java" afterPath="$PROJECT_DIR$/../DesignPattern/abstractFactory/src/util/DataUtil.java" />
       <change beforePath="$PROJECT_DIR$/../DesignPattern/esayFactory/src/Angel.java" afterPath="$PROJECT_DIR$/../DesignPattern/esayFactory/src/Angel.java" />
       <change beforePath="$PROJECT_DIR$/../DesignPattern/esayFactory/src/Circle.java" afterPath="$PROJECT_DIR$/../DesignPattern/esayFactory/src/Circle.java" />
       <change beforePath="$PROJECT_DIR$/../DesignPattern/esayFactory/src/Shape.java" afterPath="$PROJECT_DIR$/../DesignPattern/esayFactory/src/Shape.java" />
@@ -81,7 +81,7 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
     <option name="width" value="734" />
     <option name="height" value="867" />
@@ -235,16 +235,15 @@
       <option name="presentableId" value="Default" />
       <updated>1543376344722</updated>
       <workItem from="1543376347733" duration="4349000" />
-      <workItem from="1543888990770" duration="3929000" />
+      <workItem from="1543888990770" duration="4168000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8278000" />
+    <option name="totallyTimeSpent" value="8517000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="876" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />

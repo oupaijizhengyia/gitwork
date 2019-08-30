@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name = "stdout" class = "ch.qos.logback.core.ConsoleAppender">
+        <encoder class = "ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>
+                %d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+            </Pattern>
+        </encoder>
+    </appender>
+    <!--这个是配置多个数据源的不同的日志输出级别-->
+    <springProfile name = "!prod">
+        <root level = "DEBUG">
+            <appender-ref ref = "stdout"></appender-ref>
+        </root>
+    </springProfile>
+</configuration>
